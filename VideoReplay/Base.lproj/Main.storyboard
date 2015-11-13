@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="23m-bm-nle">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Capture Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CaptureController" customModule="VideoReplay" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGh-lD-lde">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HRx-0O-m2B" customClass="CaptureProgress" customModule="VideoReplay" customModuleProvider="target">
+                                        <rect key="frame" x="137" y="559" width="100" height="100"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="ringColor">
+                                                <color key="value" red="1" green="0.034578598420000002" blue="0.14930722769999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                <color key="value" red="1" green="0.034578598420000002" blue="0.14930722769999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="circleInset">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="95s-ZK-xqk" customClass="RecordStatus" customModule="VideoReplay" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="8" width="40" height="40"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ESc-FZ-HLg"/>
+                                            <constraint firstAttribute="width" constant="40" id="dwk-NU-3H2"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="95s-ZK-xqk" firstAttribute="leading" secondItem="AGh-lD-lde" secondAttribute="leadingMargin" id="osd-3c-Y8O"/>
+                                    <constraint firstItem="95s-ZK-xqk" firstAttribute="top" secondItem="AGh-lD-lde" secondAttribute="topMargin" id="pyv-Km-i48"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AGh-lD-lde" secondAttribute="bottom" id="NCY-5O-P5X"/>
+                            <constraint firstAttribute="trailing" secondItem="AGh-lD-lde" secondAttribute="trailing" id="YBH-Ch-hlh"/>
+                            <constraint firstItem="AGh-lD-lde" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cZH-tN-PQf"/>
+                            <constraint firstItem="AGh-lD-lde" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nzf-Jk-6mp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9IG-fq-e15"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="liveView" destination="AGh-lD-lde" id="rhI-tR-SX9"/>
+                        <outlet property="recordStatusView" destination="95s-ZK-xqk" id="DXW-5s-ALG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857.5" y="1069.5"/>
+        </scene>
+        <!--Replay Controller-->
+        <scene sceneID="8JJ-EC-bic">
+            <objects>
+                <viewController storyboardIdentifier="ReplayVC" id="qu3-kW-Joj" customClass="ReplayController" customModule="VideoReplay" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XRG-US-rjx"/>
+                        <viewControllerLayoutGuide type="bottom" id="M9T-3L-K6z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3SQ-hI-crK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dgy-DL-XVZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Udh-Ps-bEs">
+                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dqh-C9-kry">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrS-2X-IxD">
+                                            <rect key="frame" x="0.0" y="79" width="90" height="20.5"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="90" id="4bi-kd-A5b"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.96865254089999997" green="0.98127453750000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VF5-cZ-XST">
+                                            <rect key="frame" x="285" y="79" width="90" height="20.5"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="90" id="YIT-U5-xV4"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleAspectFit" semanticContentAttribute="playback" translatesAutoresizingMaskIntoConstraints="NO" id="D5S-Au-qrl" customClass="TouchSlider" customModule="VideoReplay" customModuleProvider="target">
+                                            <rect key="frame" x="40" y="49.5" width="295" height="30"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="Rzh-Cx-u0m"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="barColor">
+                                                    <color key="value" red="1" green="0.034578598420000002" blue="0.14930722769999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="handleColor">
+                                                    <color key="value" red="0.0039215686269999999" green="0.56078431370000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="minValue">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                    <real key="value" value="100"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="rect" keyPath="handleRect">
+                                                    <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view contentMode="scaleAspectFit" semanticContentAttribute="playback" translatesAutoresizingMaskIntoConstraints="NO" id="pyU-OB-rTl" customClass="TouchSlider" customModule="VideoReplay" customModuleProvider="target">
+                                            <rect key="frame" x="40" y="19" width="295" height="30"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="emm-p2-aKW"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="barColor">
+                                                    <color key="value" red="1" green="0.034578598420000002" blue="0.14930722769999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="handleColor">
+                                                    <color key="value" red="0.0039215686269999999" green="0.56078431370000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="minValue">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                    <real key="value" value="100"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="rect" keyPath="handleRect">
+                                                    <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="pyU-OB-rTl" secondAttribute="trailing" constant="40" id="B4i-qi-dZk"/>
+                                        <constraint firstItem="pyU-OB-rTl" firstAttribute="leading" secondItem="dqh-C9-kry" secondAttribute="leading" constant="40" id="HDs-rG-0rE"/>
+                                        <constraint firstAttribute="trailing" secondItem="VF5-cZ-XST" secondAttribute="trailing" id="MWC-L5-dwZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="D5S-Au-qrl" secondAttribute="trailing" constant="40" id="WNO-Fh-jp9"/>
+                                        <constraint firstItem="D5S-Au-qrl" firstAttribute="top" secondItem="pyU-OB-rTl" secondAttribute="bottom" id="d1A-ie-J4o"/>
+                                        <constraint firstItem="D5S-Au-qrl" firstAttribute="leading" secondItem="dqh-C9-kry" secondAttribute="leading" constant="40" id="iy0-mS-IsC"/>
+                                        <constraint firstItem="MrS-2X-IxD" firstAttribute="leading" secondItem="dqh-C9-kry" secondAttribute="leading" id="lKN-dp-0sf"/>
+                                        <constraint firstAttribute="bottom" secondItem="VF5-cZ-XST" secondAttribute="bottom" id="nWc-rU-HUH"/>
+                                        <constraint firstItem="VF5-cZ-XST" firstAttribute="top" secondItem="D5S-Au-qrl" secondAttribute="bottom" id="p1L-XL-hTb"/>
+                                        <constraint firstAttribute="bottom" secondItem="MrS-2X-IxD" secondAttribute="bottom" id="wXp-90-Uve"/>
+                                    </constraints>
+                                </view>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="B3X-jK-szJ"/>
+                                </constraints>
+                                <vibrancyEffect>
+                                    <blurEffect style="dark"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="M9T-3L-K6z" firstAttribute="top" secondItem="Udh-Ps-bEs" secondAttribute="bottom" id="0yp-rP-N9M"/>
+                            <constraint firstItem="dgy-DL-XVZ" firstAttribute="top" secondItem="3SQ-hI-crK" secondAttribute="top" id="6gM-rg-3Cf"/>
+                            <constraint firstItem="dgy-DL-XVZ" firstAttribute="leading" secondItem="3SQ-hI-crK" secondAttribute="leading" id="AmC-Kn-8dJ"/>
+                            <constraint firstItem="Udh-Ps-bEs" firstAttribute="leading" secondItem="3SQ-hI-crK" secondAttribute="leading" id="Dtm-bk-9Ka"/>
+                            <constraint firstItem="M9T-3L-K6z" firstAttribute="top" secondItem="dgy-DL-XVZ" secondAttribute="bottom" id="FgJ-8T-en5"/>
+                            <constraint firstAttribute="trailing" secondItem="dgy-DL-XVZ" secondAttribute="trailing" id="Wcc-Fl-vpG"/>
+                            <constraint firstAttribute="trailing" secondItem="Udh-Ps-bEs" secondAttribute="trailing" id="Zvh-34-HDT"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="currentTimeTimer" destination="MrS-2X-IxD" id="wLo-Av-Rvd"/>
+                        <outlet property="replayView" destination="dgy-DL-XVZ" id="KaJ-Cp-sxn"/>
+                        <outlet property="totalTimeTimer" destination="VF5-cZ-XST" id="T1w-q9-KYN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NNt-9n-Znj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1273.5" y="1069.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dH7-xK-LwA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="23m-bm-nle" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TeM-d3-qce">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4Jo-Ky-CnQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eqd-Ji-1ks" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="430" y="1070"/>
+        </scene>
+    </scenes>
+</document>
