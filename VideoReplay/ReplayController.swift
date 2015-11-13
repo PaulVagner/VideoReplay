@@ -16,13 +16,37 @@ class ReplayController: UIViewController {
 
     @IBOutlet weak var replayView: UIView!
     
-    @IBOutlet weak var currentTimeTimer: UILabel!
+    @IBOutlet weak var currentTimeLabel: UILabel!
     
-    @IBOutlet weak var totalTimeTimer: UILabel!
+    @IBOutlet weak var totalTimeLabel: UILabel!
     
     var url: NSURL!
     
     var videoPlayer = AVPlayerViewController()
+    
+    var currentTimeTimer: NSTimer?
+    
+    var totalTimeTimer: NSTimer?
+    
+    override func viewDidLoad() {
+        
+        updateCurrentTime()
+        
+        currentTimeTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateCurrentTime", userInfo: nil, repeats: true)
+    
+    
+    }
+    
+    func updateCurrentTime() {
+        
+        let date = NSDate()
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "HH:mm:ss"
+        currentTimeLabel.text = formatter.stringFromDate(date)
+        
+    }
+    
     
     override func viewDidAppear(animated: Bool) {
         
