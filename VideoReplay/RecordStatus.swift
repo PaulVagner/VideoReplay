@@ -26,10 +26,7 @@ import UIKit
         CGContextFillEllipseInRect(context, insideRect)
         
         CGContextStrokeEllipseInRect(context, outsideRect)
-        
-       
-        
-
+      
     }
 
 }

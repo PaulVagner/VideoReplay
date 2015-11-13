@@ -16,15 +16,9 @@ class ReplayController: UIViewController {
 
     @IBOutlet weak var replayView: UIView!
     
-    
-    
     @IBOutlet weak var currentTimeTimer: UILabel!
     
-    
-    
     @IBOutlet weak var totalTimeTimer: UILabel!
-    
-    
     
     var url: NSURL!
     
@@ -39,8 +33,6 @@ class ReplayController: UIViewController {
         
         videoPlayer.player = AVPlayer(URL: url)
         videoPlayer.showsPlaybackControls = false
-        
-        
         
     }
     

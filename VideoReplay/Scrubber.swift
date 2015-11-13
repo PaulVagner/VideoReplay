@@ -8,6 +8,8 @@
 
 import UIKit
 
-@IBDesignable class Scrubber: UIView {
+@IBDesignable class Scrubber: TouchSlider {
 
+    
+    
    }
