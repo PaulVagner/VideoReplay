@@ -43,7 +43,7 @@ class ReplayController: UIViewController {
         
         let formatter = NSDateFormatter()
         formatter.dateFormat = "HH:mm:ss"
-        currentTimeLabel.text = formatter.stringFromDate(date)
+        currentTimeLabel?.text = formatter.stringFromDate(date)
         
     }
     

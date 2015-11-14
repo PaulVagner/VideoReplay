@@ -10,26 +10,60 @@ import UIKit
 
 @IBDesignable class CaptureProgress: UIView {
 
-    @IBInspectable var strokeColor: UIColor = UIColor.redColor()
+    @IBOutlet weak var  secondsLabel: UILabel!
     
-    @IBInspectable var strokeWidth: CGFloat = 0
+    @IBInspectable var progressAmount: CGFloat = 0 {
+        
+        didSet {
+            
+            setNeedsDisplay()
+           secondsLabel?.text = "\(Int(progressAmount / 10))"
     
-    @IBInspectable var circleInset: CGFloat = 3
+        }
+   
+    }
+    
+    @IBInspectable var progressColor: UIColor = UIColor.redColor().colorWithAlphaComponent(0.4)
+    
     
     override func drawRect(rect: CGRect) {
         
         let context = UIGraphicsGetCurrentContext()
         
-        let insetRect = CGRectInset(rect, circleInset, circleInset)
+        CGContextSetLineWidth(context, 4)
         
-        strokeColor.set()
+        //back middle circle
+        CGContextSetLineCap(context, .Round)
         
-        CGContextSetLineWidth(context, strokeWidth)
-        
-        CGContextStrokeEllipseInRect(context, CGRectInset(rect, circleInset, circleInset))
-        
+        UIColor(white: 0, alpha: 0.1).set()
         
         
+        //top left cicrle
+        CGContextStrokeEllipseInRect(context, CGRectInset(rect, 20, 20))
+        
+        progressColor.set()
+        
+        CGContextFillEllipseInRect(context, CGRect(x: 5, y: 5, width: 30, height: 30))
+
+        
+        //progress circle
+        let center = CGPoint(x: rect.midX, y: rect.midY)
+        let radius = rect.width / 2 - 20
+        let startAngle = -CGFloat(M_PI * 2 * 0.25)
+        let progressAngle = CGFloat(M_PI * 2) * (progressAmount / 100) + startAngle
+        
+        
+        let progressPath = UIBezierPath(arcCenter: center, radius: radius, startAngle: startAngle, endAngle: progressAngle, clockwise: true)
+        
+        CGContextAddPath(context, progressPath.CGPath)
+        
+        CGContextStrokePath(context)
+        
+        // draw seconds
+//        
+//        let seconds: NSString = "\(Int(progressAmount / 10))"
+//        
+//       seconds.drawInRect(CGRect(x: 6, y: 6, width: 30, height: 30), withAttributes: nil)
     }
     
 }

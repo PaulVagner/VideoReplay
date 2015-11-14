@@ -12,20 +12,43 @@ import UIKit
 
     @IBInspectable var color: UIColor = UIColor.lightGrayColor()
     
-      
+    @IBInspectable var isRecording: Bool = false {
+        
+        didSet { setNeedsDisplay() }
+    }
+    
+    
+    
+    var centerColor: UIColor {
+        
+        return isRecording ? UIColor(red:0.73, green:0.23, blue:1, alpha:1) : UIColor.blackColor()
+    }
+    
     override func drawRect(rect: CGRect) {
         
         let context = UIGraphicsGetCurrentContext()
+       
+        CGContextSetLineWidth(context, 2)
         
-        color.set()
+        UIColor(white: 0, alpha: 0.4).set()
         
-        let insideRect = CGRectInset(rect, 10, 10)
+        CGContextStrokeEllipseInRect(context, CGRectInset(rect, 1, 1))
         
-        let outsideRect = CGRectInset(rect, 05, 05)
+        centerColor.set()
         
-        CGContextFillEllipseInRect(context, insideRect)
+        CGContextFillEllipseInRect(context, CGRectInset(rect, 4, 4))
         
-        CGContextStrokeEllipseInRect(context, outsideRect)
+        
+        
+//        color.set()
+//        
+//        let insideRect = CGRectInset(rect, 10, 10)
+//        
+//        let outsideRect = CGRectInset(rect, 05, 05)
+//        
+//        CGContextFillEllipseInRect(context, insideRect)
+//        
+//        CGContextStrokeEllipseInRect(context, outsideRect)
       
     }
 

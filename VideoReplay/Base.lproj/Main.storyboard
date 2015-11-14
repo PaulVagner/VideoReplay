@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Capture Controller-->
@@ -20,50 +19,52 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGh-lD-lde">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HRx-0O-m2B" customClass="CaptureProgress" customModule="VideoReplay" customModuleProvider="target">
-                                        <rect key="frame" x="137" y="559" width="100" height="100"/>
-                                        <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="ringColor">
-                                                <color key="value" red="1" green="0.034578598420000002" blue="0.14930722769999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
-                                                <color key="value" red="1" green="0.034578598420000002" blue="0.14930722769999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="circleInset">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="95s-ZK-xqk" customClass="RecordStatus" customModule="VideoReplay" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="8" width="40" height="40"/>
-                                        <animations/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="ESc-FZ-HLg"/>
-                                            <constraint firstAttribute="width" constant="40" id="dwk-NU-3H2"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRx-0O-m2B" customClass="CaptureProgress" customModule="VideoReplay" customModuleProvider="target">
+                                <rect key="frame" x="137" y="284" width="140" height="140"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkK-Xg-94S">
+                                        <rect key="frame" x="5" y="5" width="30" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="1" blue="0.016062608870000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="95s-ZK-xqk" firstAttribute="leading" secondItem="AGh-lD-lde" secondAttribute="leadingMargin" id="osd-3c-Y8O"/>
-                                    <constraint firstItem="95s-ZK-xqk" firstAttribute="top" secondItem="AGh-lD-lde" secondAttribute="topMargin" id="pyv-Km-i48"/>
+                                    <constraint firstAttribute="height" constant="140" id="6kj-1K-XX4"/>
+                                    <constraint firstAttribute="width" constant="140" id="GrP-Zb-Az6"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progressAmount">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                        <color key="value" red="0.66274509803921566" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="secondsLabel" destination="mkK-Xg-94S" id="P8M-Zn-lks"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="95s-ZK-xqk" customClass="RecordStatus" customModule="VideoReplay" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ESc-FZ-HLg"/>
+                                    <constraint firstAttribute="width" constant="40" id="dwk-NU-3H2"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRecording" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <animations/>
@@ -71,20 +72,27 @@
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AGh-lD-lde" secondAttribute="bottom" id="NCY-5O-P5X"/>
                             <constraint firstAttribute="trailing" secondItem="AGh-lD-lde" secondAttribute="trailing" id="YBH-Ch-hlh"/>
+                            <constraint firstItem="HRx-0O-m2B" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="284" id="YCk-mh-d7i"/>
                             <constraint firstItem="AGh-lD-lde" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cZH-tN-PQf"/>
+                            <constraint firstItem="95s-ZK-xqk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="e6T-iC-QBq"/>
+                            <constraint firstItem="95s-ZK-xqk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="fd4-fz-Nx5"/>
                             <constraint firstItem="AGh-lD-lde" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nzf-Jk-6mp"/>
+                            <constraint firstItem="HRx-0O-m2B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="137" id="st2-gb-oVx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9IG-fq-e15"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="captureProgressView" destination="HRx-0O-m2B" id="lC5-vj-OIE"/>
                         <outlet property="liveView" destination="AGh-lD-lde" id="rhI-tR-SX9"/>
+                        <outlet property="progressLeftConstraint" destination="st2-gb-oVx" id="t0g-gL-Yl0"/>
+                        <outlet property="progressTopConstraints" destination="YCk-mh-d7i" id="j6L-RW-IuH"/>
                         <outlet property="recordStatusView" destination="95s-ZK-xqk" id="DXW-5s-ALG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857.5" y="1069.5"/>
+            <point key="canvasLocation" x="843.5" y="1069.5"/>
         </scene>
         <!--Replay Controller-->
         <scene sceneID="8JJ-EC-bic">
